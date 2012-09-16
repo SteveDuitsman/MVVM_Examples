@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@section scripts{
+    @Scripts.Render("~/Scripts/WeatherApp/WeatherSearchViewModel.js")
+}
+
+<h2>Search For Weather</h2>
+<div id="weatherSearch">
+    <span>Search</span>
+    <input data-bind="value: SearchText" />
+    <button data-bind="click: LoadWeather" type="button">Go</button>
+    <div data-bind="visible: IsLoading">Loading</div>
+</div>
+<div data-bind="if: WeatherResult.current_observation">
+   Weather Result
+    <dl data-bind="with: WeatherResult.current_observation">
+        <dt data-bind="if: display_location"><b data-bind="text: display_location.full"></b></dt>
+        <dt data-bind="if: temperature_string"><strong><span data-bind="text: temperature_string"></span></strong></dt>
+    </dl>
+</div>
+<div>
+    <span>Debug Info:</span>
+    <div>
+        <pre data-bind="text: JSON.stringify(ko.toJS($data), null, 2)"></pre>
+    </div>
+</div>
+
+<script type="text/html" id="tmplWeatherResult">
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        var viewModel = new WeatherSearchViewModel();
+        ko.applyBindings(viewModel);
+    });
+</script>

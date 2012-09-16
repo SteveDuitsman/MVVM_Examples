@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Web
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KO_WeatherApp", "KO_WeatherApp\KO_WeatherApp.csproj", "{AF188DB4-4101-4FDB-8560-BFA92CF9628C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KO_WeatherApp.Tests", "KO_WeatherApp.Tests\KO_WeatherApp.Tests.csproj", "{E9909E52-7F2E-4161-8B1F-DC3C201A9C7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF188DB4-4101-4FDB-8560-BFA92CF9628C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF188DB4-4101-4FDB-8560-BFA92CF9628C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF188DB4-4101-4FDB-8560-BFA92CF9628C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF188DB4-4101-4FDB-8560-BFA92CF9628C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9909E52-7F2E-4161-8B1F-DC3C201A9C7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9909E52-7F2E-4161-8B1F-DC3C201A9C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9909E52-7F2E-4161-8B1F-DC3C201A9C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9909E52-7F2E-4161-8B1F-DC3C201A9C7E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
