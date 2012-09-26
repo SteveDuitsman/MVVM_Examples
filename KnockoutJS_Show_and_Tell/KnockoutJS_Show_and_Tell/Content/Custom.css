@@ -1,0 +1,16 @@
+﻿.valueSummary
+{
+    border: solid gray 1px;
+    padding: 5px; 
+    background-color: lightgray;
+}
+
+.knockoutModelDebug
+{
+    font-size: 1em;
+    font-family: Consolas;
+    border: solid blue 1px;
+    margin-top: 10px;
+    padding: 5px; 
+    background-color: lightgray;
+}

@@ -1,0 +1,154 @@
+============================================================================================================================
+KO Debugging
+============================================================================================================================
+<div class="knockoutModelDebug">
+    <pre data-bind="text: JSON.stringify(ko.toJS($data), null, 2)"></pre>
+</div>
+
+============================================================================================================================
+KO Basics View and Script
+============================================================================================================================
+@{
+    ViewBag.Title = "Knockout Basics";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+<div>
+    <div>
+        <span>Name:</span>
+        <input data-bind="value: name" />
+
+        <div class="valueSummary">
+            <span data-bind="text: name"></span>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var nameModel = {
+            name: ko.observable('Fred')
+        };
+        ko.applyBindings(nameModel);
+    });
+</script>
+
+
+============================================================================================================================
+Computed Observable
+============================================================================================================================
+@{
+    ViewBag.Title = "Knockout Basics";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <div>
+        <dl>
+            <dt>
+                <span>Name:</span>
+                <input data-bind="value: Name" />
+            </dt>
+            <dt>
+                <span>Height (In):</span>
+                <input data-bind="value: HeightIn" />
+            </dt>
+            <dt>
+                <span>Height (Cm):</span>
+                <input data-bind="value: HeightCm" />
+
+            </dt>
+        </dl>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function PersonViewModel() {
+        var self = this;
+        self.Name = ko.observable('Fred');
+        self.HeightIn = ko.observable(70);
+        self.HeightCm = ko.computed(function () {
+            return self.HeightIn() * 2.54;
+        });
+    };
+
+    $(document).ready(function () {
+        var nameModel = new PersonViewModel();
+        ko.applyBindings(nameModel);
+    });
+</script>
+
+
+============================================================================================================================
+Writable Observable
+============================================================================================================================
+        self.HeightCm = ko.computed({
+            read: function () {
+                return self.HeightIn() * 2.54;
+            },
+            write: function (newValue) {
+                var newHeightInInches = newValue / 2.54;
+                self.HeightIn(newHeightInInches);
+            }
+        });
+
+
+
+============================================================================================================================
+Visible Attribute
+============================================================================================================================
+@{
+    ViewBag.Title = "Knockout Basics";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <div>
+        <dl>
+            <dt>
+                <span>Name:</span>
+                <input data-bind="value: Name" />
+            </dt>
+            <dt>
+                <span>Height (In):</span>
+                <input data-bind="value: HeightIn" />
+            </dt>
+            <dt>
+                <span>Height (Cm):</span>
+                <input data-bind="value: HeightCm" />
+            </dt>
+            <dt data-bind="visible: IsHeightInvalid">
+                <img src="~/Images/Custom/heightTooHigh.jpg" />
+            </dt>
+        </dl>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function PersonViewModel() {
+        var self = this;
+        self.Name = ko.observable('Fred');
+        self.HeightIn = ko.observable(70);
+        self.HeightCm = ko.computed({
+            read: function () {
+                return self.HeightIn() * 2.54;
+            },
+            write: function (newValue) {
+                var newHeightInInches = newValue / 2.54;
+                self.HeightIn(newHeightInInches);
+            }
+        });
+        self.IsHeightInvalid = ko.computed(function () {
+            return (self.HeightIn() >= 125);
+        });
+    };
+
+    $(document).ready(function () {
+        var nameModel = new PersonViewModel();
+        ko.applyBindings(nameModel);
+    });
+</script>
