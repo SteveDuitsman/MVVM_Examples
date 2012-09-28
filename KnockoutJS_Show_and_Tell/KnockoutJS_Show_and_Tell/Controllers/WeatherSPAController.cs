@@ -7,9 +7,9 @@ using KnockoutJS_Show_and_Tell.Services;
 
 namespace KnockoutJS_Show_and_Tell.Controllers
 {
-    public class WeatherController : Controller
+    public class WeatherSPAController : Controller
     {
-        public WeatherController(IWeatherService weatherService) { }
+        public WeatherSPAController(IWeatherService weatherService) { }
 
         //
         // GET: /Weather/
