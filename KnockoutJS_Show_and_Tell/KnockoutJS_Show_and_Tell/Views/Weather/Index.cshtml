@@ -2,20 +2,22 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-<div id="weatherView">
-    <div id="cityList">
-        <ul data-bind="foreach: Cities">
-            <li><span data-bind="text: Name"></span>&nbsp;(<span data-bind="text: ZipCode"></span>)</li>
-        </ul>
-    </div>
-    <div id="weatherObservations">
-        <ul data-bind="foreach: Weather">
-            
-        </ul>
+<h2>Weather</h2>
+<div class="container">
+    <div id="weatherView">
+        <div id="cityList" class="CityList" data-bind="foreach: Cities">
+            <div class="CityListItem" data-bind="click: $parent.SelectCity(ZipCode()), 
+                        css: { 'selected-City': $parent.IsCitySelected(ZipCode) }">
+                <span data-bind="text: Name"></span>&nbsp;(<span data-bind="text: ZipCode"></span>)
+            </div>
+        </div>
+        <div id="weatherObservations" class="WeatherList">
+            <ul data-bind="foreach: FilteredWeather">
+            </ul>
+        </div>
     </div>
 </div>
+
 
 @section scripts{
     @Scripts.Render("~/bundles/weather");
@@ -35,10 +37,10 @@
         var weatherViewModel = new WeatherViewModel(config);
 
         $.when(weatherViewModel.FetchCities(), weatherViewModel.FetchWeather())
-         .done(function() {
+         .done(function () {
              ko.applyBindings(weatherViewModel);
          })
-         .done(function() {
+         .done(function () {
              $('#loading-overlay').fadeOut();
          });
     });

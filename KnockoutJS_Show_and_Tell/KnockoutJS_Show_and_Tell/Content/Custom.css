@@ -35,3 +35,31 @@
  .loading-overlay img {
    margin-top:75px;
  }
+
+ .container {
+    overflow: hidden; /* Clearfix! */
+    zoom: 1;  /* Triggering "hasLayout" in IE */
+    display: block; /* Element must be a block to wrap around contents. Unnecessary if only using block-level elements. */
+}
+
+.CityList
+{
+    float: left;
+    width: 25%;
+}
+
+.CityListItem {
+    padding: 5px;
+    background-color: navy;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.WeatherList
+{
+    float: right;
+    width: 70%;
+    border: solid gray 1px;
+    padding: 5px; 
+    background-color: lightgray;
+}
