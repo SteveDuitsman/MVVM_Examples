@@ -5,7 +5,11 @@
 <h2>Index</h2>
 
 <div>
-    <div id="cityList"></div>
+    <div id="cityList">
+        <ul data-bind="foreach: Cities">
+            <li><span data-bind="text: Name"></span>&nbsp;(<span data-bind="text: ZipCode"></span>)</li>
+        </ul>
+    </div>
     <div id="weatherObservations"></div>
 </div>
 
