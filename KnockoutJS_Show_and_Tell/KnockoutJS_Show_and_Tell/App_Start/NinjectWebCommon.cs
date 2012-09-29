@@ -6,6 +6,7 @@ namespace KnockoutJS_Show_and_Tell.App_Start
     using System;
     using System.Web;
     using DataAccess;
+    using DataAccess.Concrete;
     using KnockoutJS_Show_and_Tell.Services;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
     using Ninject;
@@ -55,8 +56,11 @@ namespace KnockoutJS_Show_and_Tell.App_Start
         {
             kernel.Bind<IWeatherService>().To<WeatherService>();
 
-            kernel.Bind<IWeatherRepository>().To<RealWeatherRepository>();
-            //kernel.Bind<IWeatherRepository>().To<MockWeatherRepository>();
+            //  Hit WeatherUnderground API
+            //kernel.Bind<IWeatherRepository>().To<RealWeatherRepository>();
+
+            //  Use local resources for a select few zip codes
+            kernel.Bind<IWeatherRepository>().To<MockWeatherRepository>();
 
             //  Use convention based bindings!
         }        

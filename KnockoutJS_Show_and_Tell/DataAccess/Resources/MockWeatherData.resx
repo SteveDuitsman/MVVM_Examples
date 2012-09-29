@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Z53201" xml:space="preserve">
+    <value>{
+	"response": {
+		"version": "0.1"
+		,"termsofService": "http://www.wunderground.com/weather/api/d/terms.html"
+		,"features": {
+		"conditions": 1
+		}
+	}
+		,	"current_observation": {
+		"image": {
+		"url":"http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
+		"title":"Weather Underground",
+		"link":"http://www.wunderground.com"
+		},
+		"display_location": {
+		"full":"Milwaukee, WI",
+		"city":"Milwaukee",
+		"state":"WI",
+		"state_name":"Wisconsin",
+		"country":"US",
+		"country_iso3166":"US",
+		"zip":"53201",
+		"latitude":"43.03427887",
+		"longitude":"-87.91512299",
+		"elevation":"188.00000000"
+		},
+		"observation_location": {
+		"full":"Inner Harbor / KK River / Harbor View, Milwaukee, Wisconsin",
+		"city":"Inner Harbor / KK River / Harbor View, Milwaukee",
+		"state":"Wisconsin",
+		"country":"US",
+		"country_iso3166":"US",
+		"latitude":"43.017601",
+		"longitude":"-87.903290",
+		"elevation":"600 ft"
+		},
+		"estimated": {
+		},
+		"station_id":"KWIMILWA14",
+		"observation_time":"Last Updated on September 25, 10:38 PM CDT",
+		"observation_time_rfc822":"Tue, 25 Sep 2012 22:38:16 -0500",
+		"observation_epoch":"1348630696",
+		"local_time_rfc822":"Tue, 25 Sep 2012 22:38:26 -0500",
+		"local_epoch":"1348630706",
+		"local_tz_short":"CDT",
+		"local_tz_long":"America/Chicago",
+		"local_tz_offset":"-0500",
+		"weather":"Clear",
+		"temperature_string":"58.0 F (14.4 C)",
+		"temp_f":58.0,
+		"temp_c":14.4,
+		"relative_humidity":"56%",
+		"wind_string":"From the WSW at 8.0 MPH Gusting to 10.0 MPH",
+		"wind_dir":"WSW",
+		"wind_degrees":247,
+		"wind_mph":8.0,
+		"wind_gust_mph":"10.0",
+		"wind_kph":12.9,
+		"wind_gust_kph":"16.1",
+		"pressure_mb":"1011",
+		"pressure_in":"29.86",
+		"pressure_trend":"+",
+		"dewpoint_string":"42 F (6 C)",
+		"dewpoint_f":42,
+		"dewpoint_c":6,
+		"heat_index_string":"NA",
+		"heat_index_f":"NA",
+		"heat_index_c":"NA",
+		"windchill_string":"NA",
+		"windchill_f":"NA",
+		"windchill_c":"NA",
+		"feelslike_string":"58.0 F (14.4 C)",
+		"feelslike_f":"58.0",
+		"feelslike_c":"14.4",
+		"visibility_mi":"10.0",
+		"visibility_km":"16.1",
+		"solarradiation":"0",
+		"UV":"0",
+		"precip_1hr_string":"0.00 in ( 0 mm)",
+		"precip_1hr_in":"0.00",
+		"precip_1hr_metric":" 0",
+		"precip_today_string":"-999.00 in (-25375 mm)",
+		"precip_today_in":"-999.00",
+		"precip_today_metric":"-25375",
+		"icon":"clear",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/nt_clear.gif",
+		"forecast_url":"http://www.wunderground.com/US/WI/Milwaukee.html",
+		"history_url":"http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KWIMILWA14",
+		"ob_url":"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=43.017601,-87.903290"
+	}
+}</value>
+  </data>
+  <data name="Z54229" xml:space="preserve">
+    <value>{
+	"response": {
+		"version": "0.1"
+		,"termsofService": "http://www.wunderground.com/weather/api/d/terms.html"
+		,"features": {
+		"conditions": 1
+		}
+	}
+		,	"current_observation": {
+		"image": {
+		"url":"http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
+		"title":"Weather Underground",
+		"link":"http://www.wunderground.com"
+		},
+		"display_location": {
+		"full":"Green Bay, WI",
+		"city":"Green Bay",
+		"state":"WI",
+		"state_name":"Wisconsin",
+		"country":"US",
+		"country_iso3166":"US",
+		"zip":"54229",
+		"latitude":"44.55935669",
+		"longitude":"-87.83329010",
+		"elevation":"250.00000000"
+		},
+		"observation_location": {
+		"full":"Red Smith Area, Green Bay, Wisconsin",
+		"city":"Red Smith Area, Green Bay",
+		"state":"Wisconsin",
+		"country":"US",
+		"country_iso3166":"US",
+		"latitude":"44.538174",
+		"longitude":"-87.903641",
+		"elevation":"702 ft"
+		},
+		"estimated": {
+		},
+		"station_id":"KWIGREEN9",
+		"observation_time":"Last Updated on September 25, 10:34 PM CDT",
+		"observation_time_rfc822":"Tue, 25 Sep 2012 22:34:17 -0500",
+		"observation_epoch":"1348630457",
+		"local_time_rfc822":"Tue, 25 Sep 2012 22:41:28 -0500",
+		"local_epoch":"1348630888",
+		"local_tz_short":"CDT",
+		"local_tz_long":"America/Chicago",
+		"local_tz_offset":"-0500",
+		"weather":"Clear",
+		"temperature_string":"48.0 F (8.9 C)",
+		"temp_f":48.0,
+		"temp_c":8.9,
+		"relative_humidity":"90%",
+		"wind_string":"Calm",
+		"wind_dir":"ESE",
+		"wind_degrees":121,
+		"wind_mph":0.0,
+		"wind_gust_mph":0,
+		"wind_kph":0.0,
+		"wind_gust_kph":0,
+		"pressure_mb":"1013",
+		"pressure_in":"29.91",
+		"pressure_trend":"+",
+		"dewpoint_string":"45 F (7 C)",
+		"dewpoint_f":45,
+		"dewpoint_c":7,
+		"heat_index_string":"NA",
+		"heat_index_f":"NA",
+		"heat_index_c":"NA",
+		"windchill_string":"48 F (9 C)",
+		"windchill_f":"48",
+		"windchill_c":"9",
+		"feelslike_string":"48 F (9 C)",
+		"feelslike_f":"48",
+		"feelslike_c":"9",
+		"visibility_mi":"10.0",
+		"visibility_km":"16.1",
+		"solarradiation":"",
+		"UV":"0",
+		"precip_1hr_string":"-999.00 in ( 0 mm)",
+		"precip_1hr_in":"-999.00",
+		"precip_1hr_metric":" 0",
+		"precip_today_string":"0.00 in (0 mm)",
+		"precip_today_in":"0.00",
+		"precip_today_metric":"0",
+		"icon":"clear",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/nt_clear.gif",
+		"forecast_url":"http://www.wunderground.com/US/WI/Green_Bay.html",
+		"history_url":"http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KWIGREEN9",
+		"ob_url":"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=44.538174,-87.903641"
+	}
+}</value>
+  </data>
+  <data name="Z60290" xml:space="preserve">
+    <value>{
+	"response": {
+		"version": "0.1"
+		,"termsofService": "http://www.wunderground.com/weather/api/d/terms.html"
+		,"features": {
+		"conditions": 1
+		}
+	}
+		,	"current_observation": {
+		"image": {
+		"url":"http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
+		"title":"Weather Underground",
+		"link":"http://www.wunderground.com"
+		},
+		"display_location": {
+		"full":"Chicago, IL",
+		"city":"Chicago",
+		"state":"IL",
+		"state_name":"Illinois",
+		"country":"US",
+		"country_iso3166":"US",
+		"zip":"60290",
+		"latitude":"41.87459946",
+		"longitude":"-87.63729858",
+		"elevation":"189.00000000"
+		},
+		"observation_location": {
+		"full":"Chicago, Illinois",
+		"city":"Chicago",
+		"state":"Illinois",
+		"country":"US",
+		"country_iso3166":"US",
+		"latitude":"41.886047",
+		"longitude":"-87.627602",
+		"elevation":"0 ft"
+		},
+		"estimated": {
+		},
+		"station_id":"KILCHICA86",
+		"observation_time":"Last Updated on September 25, 10:37 PM CDT",
+		"observation_time_rfc822":"Tue, 25 Sep 2012 22:37:12 -0500",
+		"observation_epoch":"1348630632",
+		"local_time_rfc822":"Tue, 25 Sep 2012 22:37:23 -0500",
+		"local_epoch":"1348630643",
+		"local_tz_short":"CDT",
+		"local_tz_long":"America/Chicago",
+		"local_tz_offset":"-0500",
+		"weather":"Mostly Cloudy",
+		"temperature_string":"67.6 F (19.8 C)",
+		"temp_f":67.6,
+		"temp_c":19.8,
+		"relative_humidity":"84%",
+		"wind_string":"From the WSW at 2.0 MPH",
+		"wind_dir":"WSW",
+		"wind_degrees":257,
+		"wind_mph":2.0,
+		"wind_gust_mph":0,
+		"wind_kph":3.2,
+		"wind_gust_kph":0,
+		"pressure_mb":"1011",
+		"pressure_in":"29.86",
+		"pressure_trend":"+",
+		"dewpoint_string":"63 F (17 C)",
+		"dewpoint_f":63,
+		"dewpoint_c":17,
+		"heat_index_string":"NA",
+		"heat_index_f":"NA",
+		"heat_index_c":"NA",
+		"windchill_string":"NA",
+		"windchill_f":"NA",
+		"windchill_c":"NA",
+		"feelslike_string":"67.6 F (19.8 C)",
+		"feelslike_f":"67.6",
+		"feelslike_c":"19.8",
+		"visibility_mi":"10.0",
+		"visibility_km":"16.1",
+		"solarradiation":"0",
+		"UV":"0",
+		"precip_1hr_string":"-999.00 in ( 0 mm)",
+		"precip_1hr_in":"-999.00",
+		"precip_1hr_metric":" 0",
+		"precip_today_string":"0.00 in (0 mm)",
+		"precip_today_in":"0.00",
+		"precip_today_metric":"0",
+		"icon":"mostlycloudy",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/nt_mostlycloudy.gif",
+		"forecast_url":"http://www.wunderground.com/US/IL/Chicago.html",
+		"history_url":"http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILCHICA86",
+		"ob_url":"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=41.886047,-87.627602"
+	}
+}</value>
+  </data>
+  <data name="Z78201" xml:space="preserve">
+    <value>{
+	"response": {
+		"version": "0.1"
+		,"termsofService": "http://www.wunderground.com/weather/api/d/terms.html"
+		,"features": {
+		"conditions": 1
+		}
+	}
+		,	"current_observation": {
+		"image": {
+		"url":"http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
+		"title":"Weather Underground",
+		"link":"http://www.wunderground.com"
+		},
+		"display_location": {
+		"full":"Sanantonio, TX",
+		"city":"Sanantonio",
+		"state":"TX",
+		"state_name":"Texas",
+		"country":"US",
+		"country_iso3166":"US",
+		"zip":"78201",
+		"latitude":"29.47335052",
+		"longitude":"-98.53556061",
+		"elevation":"233.00000000"
+		},
+		"observation_location": {
+		"full":"HornLofts, San Antonio, Texas",
+		"city":"HornLofts, San Antonio",
+		"state":"Texas",
+		"country":"US",
+		"country_iso3166":"US",
+		"latitude":"29.493326",
+		"longitude":"-98.600060",
+		"elevation":"875 ft"
+		},
+		"estimated": {
+		},
+		"station_id":"KTXSANAN89",
+		"observation_time":"Last Updated on September 25, 10:34 PM CDT",
+		"observation_time_rfc822":"Tue, 25 Sep 2012 22:34:42 -0500",
+		"observation_epoch":"1348630482",
+		"local_time_rfc822":"Tue, 25 Sep 2012 22:34:46 -0500",
+		"local_epoch":"1348630486",
+		"local_tz_short":"CDT",
+		"local_tz_long":"America/Chicago",
+		"local_tz_offset":"-0500",
+		"weather":"Partly Cloudy",
+		"temperature_string":"79.2 F (26.2 C)",
+		"temp_f":79.2,
+		"temp_c":26.2,
+		"relative_humidity":"61%",
+		"wind_string":"From the SE at 3.8 MPH Gusting to 11.2 MPH",
+		"wind_dir":"SE",
+		"wind_degrees":139,
+		"wind_mph":3.8,
+		"wind_gust_mph":"11.2",
+		"wind_kph":6.1,
+		"wind_gust_kph":"18.0",
+		"pressure_mb":"1013",
+		"pressure_in":"29.92",
+		"pressure_trend":"+",
+		"dewpoint_string":"65 F (18 C)",
+		"dewpoint_f":65,
+		"dewpoint_c":18,
+		"heat_index_string":"81 F (27 C)",
+		"heat_index_f":81,
+		"heat_index_c":27,
+		"windchill_string":"NA",
+		"windchill_f":"NA",
+		"windchill_c":"NA",
+		"feelslike_string":"81 F (26.2 C)",
+		"feelslike_f":"81",
+		"feelslike_c":"26.2",
+		"visibility_mi":"10.0",
+		"visibility_km":"16.1",
+		"solarradiation":"",
+		"UV":"0",
+		"precip_1hr_string":"0.00 in ( 0 mm)",
+		"precip_1hr_in":"0.00",
+		"precip_1hr_metric":" 0",
+		"precip_today_string":"0.00 in (0 mm)",
+		"precip_today_in":"0.00",
+		"precip_today_metric":"0",
+		"icon":"partlycloudy",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/nt_partlycloudy.gif",
+		"forecast_url":"http://www.wunderground.com/US/TX/San_Antonio.html",
+		"history_url":"http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KTXSANAN89",
+		"ob_url":"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=29.493326,-98.600060"
+	}
+}</value>
+  </data>
+</root>

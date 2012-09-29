@@ -23,19 +23,19 @@ namespace KnockoutJS_Show_and_Tell.Controllers
             return View();
         }
 
-        public JsonResult GetCities()
+        public string GetCities()
         {
-            return new JsonResult { Data = new object { }, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return "";
         }
 
-        public JsonResult GetWeather()
+        public string GetWeather()
         {
-            return new JsonResult { Data = new object { }, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return WeatherService.GetWeatherData();
         }
 
-        public JsonResult GetWeatherByZipCode(int zipCode)
+        public string GetWeatherByZipCode(int zipCode)
         {
-            return new JsonResult { Data = new object { }, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return "";
         }
 
     }
