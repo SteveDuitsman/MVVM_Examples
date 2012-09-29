@@ -13,12 +13,6 @@
             ]);
         };
 
-        var CityModel = function (name, zip) {
-            this.Name = name || '';
-            this.ZipCode = zip || 0;
-            return this;
-        };
-
         return {
             Fetch: fetch,
             Data: cityData

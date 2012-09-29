@@ -24,8 +24,12 @@ namespace KnockoutJS_Show_and_Tell
                         "~/Scripts/lib/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
-                        "~/Scripts/lib/knockout-*"));
+                        "~/Scripts/lib/knockout-*",
+                        "~/Scripts/lib/knockout.mapping*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/weather").Include(
+                        "~/Scripts/app/CityModel.js",
+                        "~/Scripts/app/WeatherViewModel.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css",
                     "~/Content/Custom.css"

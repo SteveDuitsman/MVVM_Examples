@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div id="weatherView">
+    <div id="cityList">
+        <ul data-bind="foreach: Cities">
+            <li><span data-bind="text: Name"></span>&nbsp;(<span data-bind="text: ZipCode"></span>)</li>
+        </ul>
+    </div>
+    <div id="weatherObservations">
+        <ul data-bind="foreach: Weather">
+            <li>@*<span data-bind="text: Name"></span>&nbsp;(<span data-bind="text: ZipCode"></span>)*@()</li>
+        </ul>
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/weather");
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#loading-overlay').fadeIn();
+
+        var config = {
+            Urls: {
+                GetCities: '@Url.Action("GetCities", "Weather")',
+                GetWeather: '@Url.Action("GetWeather", "Weather")'
+            }
+        };
+
+        var weatherViewModel = new WeatherViewModel(config);
+
+        $.when(weatherViewModel.FetchCities(), weatherViewModel.FetchWeather())
+         .done(function() {
+             ko.applyBindings(weatherViewModel);
+         })
+         .done(function() {
+             $('#loading-overlay').fadeOut();
+         });
+    });
+</script>

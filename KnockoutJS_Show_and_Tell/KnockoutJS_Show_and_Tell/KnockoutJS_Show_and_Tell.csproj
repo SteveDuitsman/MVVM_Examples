@@ -137,7 +137,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\jQueryController.cs" />
     <Compile Include="Controllers\KO_BasicsController.cs" />
-    <Compile Include="Controllers\WeatherSPAController.cs" />
+    <Compile Include="Controllers\WeatherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -203,10 +203,12 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\loading.gif" />
     <Content Include="Scripts\app\binder.js" />
     <Content Include="Scripts\app\dataprimer.js" />
+    <Content Include="Scripts\app\CityModel.js" />
     <Content Include="Scripts\app\main.js" />
-    <Content Include="Scripts\app\vm.WeatherSPA.js" />
+    <Content Include="Scripts\app\WeatherViewModel.js" />
     <None Include="Scripts\lib\jquery-1.7.1.intellisense.js" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
@@ -226,9 +228,8 @@
     <Content Include="Scripts\app\bootstrapper.js" />
     <Content Include="Scripts\app\citydata.js" />
     <Content Include="Scripts\app\weatherdata.js" />
-    <Content Include="Scripts\lib\cs.js" />
-    <Content Include="Scripts\lib\domReady.js" />
-    <Content Include="Scripts\lib\i18n.js" />
+    <Content Include="Scripts\lib\knockout.mapping-latest.debug.js" />
+    <Content Include="Scripts\lib\knockout.mapping-latest.js" />
     <Content Include="Scripts\lib\jquery-1.7.1.js" />
     <Content Include="Scripts\lib\jquery-1.7.1.min.js" />
     <None Include="Scripts\lib\jquery.validate-vsdoc.js" />
@@ -244,10 +245,6 @@
     <Content Include="Scripts\lib\knockout-2.1.0.js" />
     <Content Include="Scripts\lib\modernizr-2.5.3.js" />
     <Content Include="Scripts\lib\_references.js" />
-    <Content Include="Scripts\lib\r.js" />
-    <Content Include="Scripts\lib\require.js" />
-    <Content Include="Scripts\lib\require.min.js" />
-    <Content Include="Scripts\lib\text.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -261,7 +258,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\jQuery\jQueryIndex.cshtml" />
     <Content Include="Views\KO_Basics\KO_Basics.cshtml" />
-    <Content Include="Views\WeatherSPA\Index.cshtml" />
+    <Content Include="Views\Weather\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
