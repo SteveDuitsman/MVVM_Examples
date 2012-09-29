@@ -55,11 +55,12 @@ namespace KnockoutJS_Show_and_Tell.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IWeatherService>().To<WeatherService>();
+            kernel.Bind<ICityService>().To<CityService>();
 
-            //  Hit WeatherUnderground API
+            kernel.Bind<ICityRepository>().To<CityRepository>();
+            //  Hit WeatherUnderground API  -----------------------------------
             //kernel.Bind<IWeatherRepository>().To<RealWeatherRepository>();
-
-            //  Use local resources for a select few zip codes
+            //  Use local resources for a select few zip codes  ---------------
             kernel.Bind<IWeatherRepository>().To<MockWeatherRepository>();
 
             //  Use convention based bindings!

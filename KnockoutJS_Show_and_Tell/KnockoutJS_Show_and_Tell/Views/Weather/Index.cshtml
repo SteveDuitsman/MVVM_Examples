@@ -12,7 +12,7 @@
     </div>
     <div id="weatherObservations">
         <ul data-bind="foreach: Weather">
-            <li>@*<span data-bind="text: Name"></span>&nbsp;(<span data-bind="text: ZipCode"></span>)*@()</li>
+            
         </ul>
     </div>
 </div>
@@ -20,7 +20,6 @@
 @section scripts{
     @Scripts.Render("~/bundles/weather");
 }
-
 
 <script type="text/javascript">
     $(document).ready(function () {

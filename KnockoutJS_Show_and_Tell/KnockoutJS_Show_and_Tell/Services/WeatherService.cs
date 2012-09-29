@@ -7,14 +7,8 @@ using DataAccess;
 
 namespace KnockoutJS_Show_and_Tell.Services
 {
-    public interface IWeatherService 
+    public class WeatherService : KnockoutJS_Show_and_Tell.Services.IWeatherService
     {
-        string GetWeatherData();
-    }
-
-    public class WeatherService : IWeatherService
-    {
-
         private IWeatherRepository WeatherRepository;
 
         public WeatherService(IWeatherRepository weatherRepository)

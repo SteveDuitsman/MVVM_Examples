@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Concrete\CityRepository.cs" />
+    <Compile Include="ICityRepository.cs" />
     <Compile Include="Concrete\MockWeatherRepository.cs" />
     <Compile Include="IWeatherRepository.cs" />
     <Compile Include="IRepositoryBase.cs" />

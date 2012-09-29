@@ -10,9 +10,11 @@ namespace KnockoutJS_Show_and_Tell.Controllers
     public class WeatherController : Controller
     {
         private IWeatherService WeatherService;
+        private ICityService CityService;
 
-        public WeatherController(IWeatherService weatherService) {
+        public WeatherController(IWeatherService weatherService, ICityService cityService) {
             WeatherService = weatherService;
+            CityService = cityService;
         }
 
         //
@@ -23,9 +25,10 @@ namespace KnockoutJS_Show_and_Tell.Controllers
             return View();
         }
 
-        public string GetCities()
+        public JsonResult GetCities()
         {
-            return "";
+            var cities = CityService.GetCities();
+            return new JsonResult { Data = cities, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public string GetWeather()
