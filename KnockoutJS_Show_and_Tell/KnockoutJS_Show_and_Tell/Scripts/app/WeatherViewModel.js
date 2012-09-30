@@ -33,6 +33,7 @@
 
     self.LoadWeather = function (cityModel) {
         if (cityModel !== null || cityModel != undefined) {
+            var zipCodeToMatch = cityModel.ZipCode();
             var filteredData = ko.utils.arrayFilter(self.Weather(), function (item) {
                 var match = false;
                 var current_observation = item.current_observation || undefined;
@@ -41,14 +42,15 @@
                     if (locationData !== undefined) {
                         var zipData = locationData.zip || undefined;
                         if (zipData !== undefined) {
-                            match = ko.utils.stringStartsWith(zipData(), cityModel.ZipCode());
+                            var zipCode = zipData();
+                            match = ko.utils.stringStartsWith(zipCode, zipCodeToMatch.toString());
                         }
                     }
                 }
                 return match;
             });
             self.SelectedCity(cityModel.ZipCode());
-            self.FilteredWeather(filteredData);
+            ko.mapping.fromJS(filteredData, {}, self.FilteredWeather);
         } 
     };
     //return {

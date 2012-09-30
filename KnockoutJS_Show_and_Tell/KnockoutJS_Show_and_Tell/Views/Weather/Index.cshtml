@@ -12,7 +12,7 @@
                 </a>
             </div>
         </div>
-        <div id="weatherObservations" class="WeatherList" data-bind="foreach: Weather">
+        <div id="weatherObservations" class="WeatherList" data-bind="foreach: FilteredWeather">
             <!-- ko if: current_observation -->
             <div class="CurrentObservation" data-bind="with: current_observation">
                 <div>
