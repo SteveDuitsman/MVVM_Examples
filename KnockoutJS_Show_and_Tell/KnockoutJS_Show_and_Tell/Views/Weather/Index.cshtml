@@ -6,14 +6,56 @@
 <div class="container">
     <div id="weatherView">
         <div id="cityList" class="CityList" data-bind="foreach: Cities">
-            <div class="CityListItem" data-bind="click: $parent.SelectCity(ZipCode()), 
-                        css: { 'selected-City': $parent.IsCitySelected(ZipCode) }">
-                <span data-bind="text: Name"></span>&nbsp;(<span data-bind="text: ZipCode"></span>)
+            <div class="CityListItem" data-bind="css: { 'selected-City': $parent.IsCitySelected(ZipCode) }">
+                <a class="cityLink" href="#" data-bind="click: $parent.LoadWeather.bind(ZipCode)">
+                    <span data-bind="text: Name"></span>&nbsp;(<span data-bind="text: ZipCode"></span>)
+                </a>
             </div>
         </div>
-        <div id="weatherObservations" class="WeatherList">
-            <ul data-bind="foreach: FilteredWeather">
-            </ul>
+        <div id="weatherObservations" class="WeatherList" data-bind="foreach: Weather">
+            <!-- ko if: current_observation -->
+            <div class="CurrentObservation" data-bind="with: current_observation">
+                <div>
+                    <div class="CurrentObservationCity" data-bind="if: display_location">
+                        <strong><span data-bind="text: display_location.full"></span></strong>
+                    </div>
+                    <!-- ko if: observation_location -->
+                    <div data-bind="with: observation_location" style="float: right;">
+                        Lat:&nbsp;<span data-bind="text: latitude"></span> | 
+                        Lon:&nbsp;<span data-bind="text: longitude"></span> | 
+                        Elev:&nbsp;<span data-bind="text: elevation"></span> | 
+                        <span data-bind="text: $parent.observation_time"></span>
+                    </div>
+                    <!-- /ko -->
+                </div>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Now</th>
+                                <th>Temperature</th>
+                                <th>Feels Like</th>
+                                <th>Wind</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img class="currentConditions" src="" data-bind="attr: { src: icon_url }" />
+                                    <br />
+                                    <span class="currentConditions" data-bind="text: weather"></span>
+                                </td>
+                                <td><span class="CurrentTemp" data-bind="text: temperature_string"></span></td>
+                                <td><span data-bind="text: feelslike_string"></span></td>
+                                <td><span data-bind="text: wind_string"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br />
+            <br />
+            <!-- /ko -->
         </div>
     </div>
 </div>

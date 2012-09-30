@@ -31,20 +31,23 @@
         return self.SelectedCity() === zip;
     };
 
-    self.SelectCity = function (zip) {
-        if (zip === null || zip == undefined) {
-            var filteredData = ko.utils.arrayFilter(self.Cities, function (item) {
+    self.LoadWeather = function (cityModel) {
+        if (cityModel !== null || cityModel != undefined) {
+            var filteredData = ko.utils.arrayFilter(self.Weather(), function (item) {
                 var match = false;
-                var locationData = item.display_location() || undefined;
-                if (locationData !== undefined) {
-                    var zipData = locationData.zip() || undefined;
-                    if (zipData !== undefined) {
-                        match = ko.utils.stringStartsWith(zipData, zip);
+                var current_observation = item.current_observation || undefined;
+                if (current_observation !== undefined) {
+                    var locationData = current_observation.display_location || undefined;
+                    if (locationData !== undefined) {
+                        var zipData = locationData.zip || undefined;
+                        if (zipData !== undefined) {
+                            match = ko.utils.stringStartsWith(zipData(), cityModel.ZipCode());
+                        }
                     }
                 }
                 return match;
             });
-            self.SelectedCity(zip);
+            self.SelectedCity(cityModel.ZipCode());
             self.FilteredWeather(filteredData);
         } 
     };

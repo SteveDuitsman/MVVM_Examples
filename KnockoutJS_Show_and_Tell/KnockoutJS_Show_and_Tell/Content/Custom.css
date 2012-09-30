@@ -1,7 +1,7 @@
 ﻿.valueSummary
 {
     border: solid gray 1px;
-    padding: 5px; 
+    padding: 5px;
     background-color: lightgray;
 }
 
@@ -11,34 +11,37 @@
     font-family: Consolas;
     border: solid blue 1px;
     margin-top: 10px;
-    padding: 5px; 
+    padding: 5px;
     background-color: lightgray;
 }
 
-.loading-overlay {
-   top:0;
-   right:0;
-   width:100%;
-   height:100%;
-   position:fixed;
-   text-align:center;
-   /* IE filter */
-   filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
-   -moz-opacity:0.5;    /* Mozilla extension */
-   -khtml-opacity:0.5;  /* Safari/Conqueror extension */
-   opacity:0.5; /* CSS3 */
-   z-index:1000;
-   background-color:white;
-   display:none;
- }
+.loading-overlay
+{
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    text-align: center;
+    /* IE filter */
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+    -moz-opacity: 0.5; /* Mozilla extension */
+    -khtml-opacity: 0.5; /* Safari/Conqueror extension */
+    opacity: 0.5; /* CSS3 */
+    z-index: 1000;
+    background-color: white;
+    display: none;
+}
 
- .loading-overlay img {
-   margin-top:75px;
- }
+    .loading-overlay img
+    {
+        margin-top: 75px;
+    }
 
- .container {
+.container
+{
     overflow: hidden; /* Clearfix! */
-    zoom: 1;  /* Triggering "hasLayout" in IE */
+    zoom: 1; /* Triggering "hasLayout" in IE */
     display: block; /* Element must be a block to wrap around contents. Unnecessary if only using block-level elements. */
 }
 
@@ -48,18 +51,64 @@
     width: 25%;
 }
 
-.CityListItem {
+.CityListItem
+{
     padding: 5px;
     background-color: navy;
     color: whitesmoke;
     font-weight: bold;
 }
 
+a.cityLink
+{
+    color: whitesmoke;
+    outline: none;
+    padding-left: 3px;
+    padding-right: 3px;
+    text-decoration: underline;
+}
+
+    a.cityLink:link, a.cityLink:visited,
+    a.cityLink:active, a.cityLink:hover
+    {
+        color: lightgoldenrodyellow;
+    }
+
+.cityLink:hover
+{
+    background-color: navy;
+}
+
 .WeatherList
 {
     float: right;
     width: 70%;
-    border: solid gray 1px;
-    padding: 5px; 
-    background-color: lightgray;
+    /*border: solid gray 1px;*/
+    padding: 5px;
+    /*background-color: lightgray;*/
+}
+
+.CurrentTemp
+{
+    font-size: larger;
+    font-weight: bold;
+}
+
+CurrentObservation
+{
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+.CurrentObservationCity
+{
+    width: 100%;
+    font-style: italic;
+    font-size: large;
+    border-bottom: 2px solid blue;
+}
+
+.currentConditions
+{
+    float: left;
 }
