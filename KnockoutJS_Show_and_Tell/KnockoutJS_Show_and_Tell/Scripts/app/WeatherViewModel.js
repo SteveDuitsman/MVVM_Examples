@@ -9,7 +9,7 @@
     self.Weather = ko.observableArray([]);
 
     self.FetchCities = function (callback) {
-        return $.getJSON(self.Config.Urls.GetCities, function (data) {
+        return $.get(self.Config.Urls.GetCities, function (data) {
             ko.mapping.fromJS(data, {}, self.Cities);
             self.SelectedCity(78201);
             if (callback !== undefined && typeof (callback) == "function") {
@@ -67,11 +67,52 @@
             }
         } 
     };
-    //return {
-    //    //Fetch: self.Fetch,
-    //    FetchCities: self.FetchCities,
-    //    Cities: ko.observable(self.Cities),
-    //    FetchWeather: self.FetchWeather,
-    //    Weather: ko.observable(self.Weather)
-    //};
+
+    self.ShowAddForm = ko.observable(false);
+    self.NewCityModel = new CityModel();
+    self.ShowAddCityError = ko.observable(false);
+    self.AddCityError = ko.observable();
+
+    self.ShowAddCityForm = function () {
+        self.NewCityModel = new CityModel();
+        self.ShowAddForm(true);
+    };
+ 
+    self.SaveNewCity = function () {
+        self.AddCityError("");
+        self.ShowAddCityError(false);
+        var jsonCity = ko.toJSON(self.NewCityModel);
+
+        $.ajax({
+            type: 'POST',
+            url: self.Config.Urls.AddCity,
+            data: jsonCity,
+            //dataType: 'json',
+            contentType: 'application/json',
+            success: function (returnedData) {
+                if (returnedData != null && returnedData.length() > 0) {
+                    self.AddCityError(returnedData);
+                    self.ShowAddCityError(true);
+                } else {
+                    self.NewCityModel = new CityModel();
+                    self.ShowAddForm(false);
+                    self.FetchCities();
+                }
+            }
+        });
+
+        //$.post(self.Config.Urls.AddCity, { city: jsonCity }, function (returnedData) {
+        //    if (returnedData !== undefined || returnedData.length() > 0) {
+        //        self.AddCityError(returnedData);
+        //        self.ShowAddCityError(true);
+        //    }
+        //});
+    };
+
+    self.CancelAddNewCity = function () {
+        self.AddCityError("");
+        self.ShowAddCityError(false);
+        self.NewCityModel = new CityModel();
+    };
+
 };

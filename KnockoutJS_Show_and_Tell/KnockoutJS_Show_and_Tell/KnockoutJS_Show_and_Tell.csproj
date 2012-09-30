@@ -206,10 +206,9 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\loading.gif" />
-    <Content Include="Scripts\app\binder.js" />
-    <Content Include="Scripts\app\dataprimer.js" />
+    <Content Include="Images\wundergroundLogo_black_horz.png" />
+    <Content Include="Images\wundergroundLogo_white_horz.png" />
     <Content Include="Scripts\app\CityModel.js" />
-    <Content Include="Scripts\app\main.js" />
     <Content Include="Scripts\app\WeatherViewModel.js" />
     <None Include="Scripts\lib\jquery-1.7.1.intellisense.js" />
     <Content Include="Images\accent.png" />
@@ -227,9 +226,6 @@
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
     <Content Include="Require.JS - LICENSE.txt" />
-    <Content Include="Scripts\app\bootstrapper.js" />
-    <Content Include="Scripts\app\citydata.js" />
-    <Content Include="Scripts\app\weatherdata.js" />
     <Content Include="Scripts\lib\knockout.mapping-latest.debug.js" />
     <Content Include="Scripts\lib\knockout.mapping-latest.js" />
     <Content Include="Scripts\lib\jquery-1.7.1.js" />
@@ -265,6 +261,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\template\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

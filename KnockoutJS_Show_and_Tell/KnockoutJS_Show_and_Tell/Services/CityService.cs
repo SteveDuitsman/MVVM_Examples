@@ -6,7 +6,7 @@ using DataAccess;
 
 namespace KnockoutJS_Show_and_Tell.Services
 {
-    public class CityService : KnockoutJS_Show_and_Tell.Services.ICityService
+    public class CityService : ICityService
     {
         protected ICityRepository CityRepository;
 
@@ -20,9 +20,9 @@ namespace KnockoutJS_Show_and_Tell.Services
             return CityRepository.All();
         }
 
-        public void AddCity()
+        public void AddCity(City city)
         {
-            throw new NotImplementedException();
+            CityRepository.Add(city);
         }
     }
 }

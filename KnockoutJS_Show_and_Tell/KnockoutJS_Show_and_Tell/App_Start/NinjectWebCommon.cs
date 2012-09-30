@@ -57,7 +57,7 @@ namespace KnockoutJS_Show_and_Tell.App_Start
             kernel.Bind<IWeatherService>().To<WeatherService>();
             kernel.Bind<ICityService>().To<CityService>();
 
-            kernel.Bind<ICityRepository>().To<CityRepository>();
+            kernel.Bind<ICityRepository>().To<CityRepository>().InSingletonScope();
             //  Hit WeatherUnderground API  -----------------------------------
             //kernel.Bind<IWeatherRepository>().To<RealWeatherRepository>();
             //  Use local resources for a select few zip codes  ---------------

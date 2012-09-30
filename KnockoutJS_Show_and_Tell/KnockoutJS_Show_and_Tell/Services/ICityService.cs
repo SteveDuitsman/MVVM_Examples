@@ -5,7 +5,7 @@ namespace KnockoutJS_Show_and_Tell.Services
 {
     public interface ICityService
     {
-        void AddCity();
+        void AddCity(City city);
         IEnumerable<City> GetCities();
     }
 }

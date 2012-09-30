@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DataAccess;
 using KnockoutJS_Show_and_Tell.Services;
 
 namespace KnockoutJS_Show_and_Tell.Controllers
@@ -25,11 +26,25 @@ namespace KnockoutJS_Show_and_Tell.Controllers
             return View();
         }
 
-        [OutputCache(Duration=600, VaryByParam="*")]
         public JsonResult GetCities()
         {
             var cities = CityService.GetCities();
             return new JsonResult { Data = cities, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
+
+        [HttpPost]
+        public JsonResult AddCity(City city)
+        {
+            string data = null;
+            try
+            {
+                CityService.AddCity(city);
+            }
+            catch (Exception e)
+            {
+                data = e.Message;
+            }
+            return new JsonResult { Data = data, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         [OutputCache(Duration = 600, VaryByParam = "*")]
