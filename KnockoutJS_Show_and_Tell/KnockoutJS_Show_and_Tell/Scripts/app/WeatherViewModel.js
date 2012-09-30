@@ -44,7 +44,7 @@
 
     self.LoadWeather = function (cityModel) {
         if (cityModel !== null || cityModel != undefined) {
-            var zipCodeToMatch = cityModel.ZipCode();
+            var zipCodeToMatch = cityModel.ZipCode().toString();
             var filteredData = ko.utils.arrayFilter(self.Weather(), function (item) {
                 var match = false;
                 var current_observation = item.current_observation || undefined;
@@ -54,7 +54,7 @@
                         var zipData = locationData.zip || undefined;
                         if (zipData !== undefined) {
                             var zipCode = zipData();
-                            match = ko.utils.stringStartsWith(zipCode, zipCodeToMatch.toString());
+                            match = ko.utils.stringStartsWith(zipCode, zipCodeToMatch);
                         }
                     }
                 }
@@ -69,6 +69,9 @@
             }
             self.SelectedCity(cityModel.ZipCode());
         } 
+    };
+
+    var matchWeatherItemByZipCode = function (zipCode) {
     };
 
     self.ShowAddForm = ko.observable(false);
