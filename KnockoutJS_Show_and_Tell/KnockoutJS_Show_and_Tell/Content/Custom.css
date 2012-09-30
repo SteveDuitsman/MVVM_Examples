@@ -83,8 +83,14 @@ a.cityLink
 {
     float: right;
     width: 70%;
-    /*border: solid gray 1px;*/
     padding: 5px;
+}
+
+.weatherObservations
+{
+    border: solid gray 1px;
+    padding: 5px;
+    margin: 0px 5px 10px 5px;
     /*background-color: lightgray;*/
 }
 

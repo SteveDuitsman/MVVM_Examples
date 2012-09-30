@@ -21,7 +21,7 @@
         <div class="WeatherList">
             <h2>Forecast</h2>
             <br />
-            <div id="weatherObservations" data-bind="foreach: FilteredWeather">
+            <div id="weatherObservations" class="weatherObservations" data-bind="foreach: FilteredWeather">
                 <!-- ko if: current_observation -->
                 <div class="CurrentObservation" data-bind="with: current_observation">
                     <div>
@@ -80,8 +80,10 @@
 }
 
 <script type="text/html" id="add-city-tmpl">
-    <p>Name: <input data-bind="value: Name" /></p>
-    <p>ZipCode: <input data-bind="value: ZipCode" /></p>
+    <p>Name: </p>
+    <input data-bind="value: Name" />
+    <p>ZipCode: </p>
+    <input data-bind="value: ZipCode" />
     <button data-bind="click: $parent.SaveNewCity">Save</button>
     <button data-bind="click: $parent.CancelAddNewCity">Cancel</button>
 </script>
