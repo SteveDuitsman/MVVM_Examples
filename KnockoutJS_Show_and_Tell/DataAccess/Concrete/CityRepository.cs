@@ -11,9 +11,9 @@ namespace DataAccess
         public CityRepository()
         {
             data = new List<City> { 
-                new City { ZipCode = 78201, Name = "San Antonio, TX" },
+                //new City { ZipCode = 78201, Name = "San Antonio, TX" },
                 new City { ZipCode = 60290, Name = "Chicago, IL" },
-                new City { ZipCode = 54229, Name = "Green Bay, WI" },
+                //new City { ZipCode = 54229, Name = "Green Bay, WI" },
                 new City { ZipCode = 53201, Name = "Milwaukee, WI" }
             };
         }

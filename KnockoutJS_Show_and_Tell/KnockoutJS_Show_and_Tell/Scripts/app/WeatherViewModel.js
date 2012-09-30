@@ -11,7 +11,6 @@
     self.FetchCities = function (callback) {
         return $.get(self.Config.Urls.GetCities, function (data) {
             ko.mapping.fromJS(data, {}, self.Cities);
-            self.SelectedCity(78201);
             if (callback !== undefined && typeof (callback) == "function") {
                 callback();
             }
@@ -29,10 +28,10 @@
 
     self.FetchWeatherByZipCode = function (zipCode, callback) {
         self.FilteredWeather.removeAll();
-        return $.get(self.Config.Urls.GetWeatherByZipCode, { zipCode: zipCode }, function (data) {
-            var tempObsArray = ko.observableArray([]);
-            ko.mapping.fromJS(data, {}, tempObsArray);
-            self.Weather.push(tempObsArray);
+        return $.getJSON(self.Config.Urls.GetWeatherByZipCode, { zipCode: zipCode }, function (data) {
+            var tempObs = {};
+            ko.mapping.fromJS(data, {}, tempObs);
+            self.Weather.push(tempObs);
             if (callback !== undefined && typeof (callback) == "function") {
                 callback();
             }
@@ -65,7 +64,7 @@
             if (filteredData.length > 0) {
                 ko.mapping.fromJS(filteredData, {}, self.FilteredWeather);
             } else {
-                self.FetchWeatherByZipCode(self.SelectedCity(), function () { self.LoadWeather(cityModel) });
+                self.FetchWeatherByZipCode(cityModel.ZipCode(), function () { self.LoadWeather(cityModel) });
             }
         } 
     };
