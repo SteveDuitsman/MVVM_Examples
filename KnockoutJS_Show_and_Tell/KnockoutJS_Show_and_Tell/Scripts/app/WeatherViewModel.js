@@ -27,6 +27,16 @@
         });
     };
 
+    self.FetchWeatherByZipCode = function (zipCode, callback) {
+        return $.getJSON(self.Config.Urls.GetWeatherByZipCode, { zipCode: zipCode }, function (data) {
+            ko.mapping.fromJS(data, {}, self.FilteredWeather);
+            self.Weather.push(self.FilteredWeather);
+            if (callback !== undefined && typeof (callback) == "function") {
+                callback();
+            }
+        });
+    };
+
     self.IsCitySelected = function(zip) {
         return self.SelectedCity() === zip;
     };
@@ -50,7 +60,11 @@
                 return match;
             });
             self.SelectedCity(cityModel.ZipCode());
-            ko.mapping.fromJS(filteredData, {}, self.FilteredWeather);
+            if (filteredData.length > 0) {
+                ko.mapping.fromJS(filteredData, {}, self.FilteredWeather);
+            } else {
+                self.FetchWeatherByZipCode(self.SelectedCity());
+            }
         } 
     };
     //return {

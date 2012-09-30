@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnockoutJS_Show_and_Tell", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{633358C2-925A-4897-B44C-FDA4605143BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Tests", "DataAccess.Tests\DataAccess.Tests.csproj", "{DB052711-B828-40E8-8B2E-26ED6CDAC055}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{633358C2-925A-4897-B44C-FDA4605143BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{633358C2-925A-4897-B44C-FDA4605143BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{633358C2-925A-4897-B44C-FDA4605143BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB052711-B828-40E8-8B2E-26ED6CDAC055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB052711-B828-40E8-8B2E-26ED6CDAC055}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB052711-B828-40E8-8B2E-26ED6CDAC055}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB052711-B828-40E8-8B2E-26ED6CDAC055}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

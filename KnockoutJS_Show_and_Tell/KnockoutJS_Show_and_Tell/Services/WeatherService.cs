@@ -20,5 +20,10 @@ namespace KnockoutJS_Show_and_Tell.Services
             var weatherdata = WeatherRepository.GetWeatherData();
             return weatherdata;
         }
+
+        public string GetWeatherData(int zipCode) {
+            var weatherdata = WeatherRepository.GetWeatherData(zipCode);
+            return weatherdata;
+        }
     }
 }

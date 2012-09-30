@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,6 +10,7 @@ namespace DataAccess
 {
     public class RealWeatherRepository : IWeatherRepository
     {
+        internal string WeatherUndergroundAPI = @"http://api.wunderground.com/api/988d4d4a2535c885/forecast/geolookup/conditions/q/";
         public string GetWeatherData()
         {
             throw new NotImplementedException();
@@ -15,7 +18,19 @@ namespace DataAccess
 
         public string GetWeatherData(int zipCode)
         {
-            throw new NotImplementedException();
+            var result = string.Empty;
+            var url = WeatherUndergroundAPI + string.Format("{0}.json", zipCode);
+            HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(WeatherUndergroundAPI);
+            httpWebRequest.Method = WebRequestMethods.Http.Get;
+            httpWebRequest.Accept = "application/json";
+
+            var response = (HttpWebResponse)httpWebRequest.GetResponse();
+
+            using (var sr = new StreamReader(response.GetResponseStream()))
+            {
+                result = sr.ReadToEnd();
+            }
+            return result;
         }
     }
 }

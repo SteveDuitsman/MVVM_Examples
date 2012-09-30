@@ -26,7 +26,23 @@ namespace DataAccess.Concrete
 
         public string GetWeatherData(int zipCode)
         {
-            throw new NotImplementedException();
+            var data = "";
+            switch (zipCode)
+            {
+                case 53201:
+                    data = MockWeatherData.Z53201;
+                    break;
+                case 60290:
+                    data = MockWeatherData.Z60290;
+                    break;
+                case 54229:
+                    data = MockWeatherData.Z54229;
+                    break;
+                case 78201:
+                    data = MockWeatherData.Z78201;
+                    break;
+            }
+            return data;
         }
     }
 }

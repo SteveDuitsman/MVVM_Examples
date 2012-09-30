@@ -25,20 +25,23 @@ namespace KnockoutJS_Show_and_Tell.Controllers
             return View();
         }
 
+        [OutputCache(Duration=600, VaryByParam="*")]
         public JsonResult GetCities()
         {
             var cities = CityService.GetCities();
             return new JsonResult { Data = cities, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
+        [OutputCache(Duration = 600, VaryByParam = "*")]
         public string GetWeather()
         {
             return WeatherService.GetWeatherData();
         }
 
+        [OutputCache(Duration = 600, VaryByParam = "*")]
         public string GetWeatherByZipCode(int zipCode)
         {
-            return "";
+            return WeatherService.GetWeatherData(zipCode);
         }
 
     }

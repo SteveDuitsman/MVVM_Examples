@@ -66,10 +66,12 @@
                 <br />
                 <!-- /ko -->
             </div>
+            <div class="wundergroundLegal">
+                <img class="wundergroundLogo" src="~/Images/wundergroundLogo_black_horz.png" />
+            </div>
         </div>
     </div>
 </div>
-
 
 @section scripts{
     @Scripts.Render("~/bundles/weather");
@@ -82,7 +84,8 @@
         var config = {
             Urls: {
                 GetCities: '@Url.Action("GetCities", "Weather")',
-                GetWeather: '@Url.Action("GetWeather", "Weather")'
+                GetWeather: '@Url.Action("GetWeather", "Weather")',
+                GetWeatherByZipCode: '@Url.Action("GetWeatherByZipCode", "Weather")'
             }
         };
 
