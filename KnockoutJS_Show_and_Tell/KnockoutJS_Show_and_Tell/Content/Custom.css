@@ -100,12 +100,23 @@ CurrentObservation
     padding-bottom: 20px;
 }
 
+table.CurrentObservation
+{
+    width: 100%;
+}
+
 .CurrentObservationCity
 {
     width: 100%;
     font-style: italic;
     font-size: large;
     border-bottom: 2px solid blue;
+}
+
+.CityDetails
+{
+    font-size: x-small;
+    color: gray;
 }
 
 .currentConditions
