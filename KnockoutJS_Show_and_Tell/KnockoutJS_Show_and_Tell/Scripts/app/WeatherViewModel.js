@@ -60,12 +60,14 @@
                 }
                 return match;
             });
-            self.SelectedCity(cityModel.ZipCode());
             if (filteredData.length > 0) {
                 ko.mapping.fromJS(filteredData, {}, self.FilteredWeather);
             } else {
-                self.FetchWeatherByZipCode(cityModel.ZipCode(), function () { self.LoadWeather(cityModel) });
+                if (self.SelectedCity() !== cityModel.ZipCode()) {
+                    self.FetchWeatherByZipCode(cityModel.ZipCode(), function () { self.LoadWeather(cityModel) });
+                }
             }
+            self.SelectedCity(cityModel.ZipCode());
         } 
     };
 
