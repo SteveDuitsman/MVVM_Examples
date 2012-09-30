@@ -28,9 +28,11 @@
     };
 
     self.FetchWeatherByZipCode = function (zipCode, callback) {
-        return $.getJSON(self.Config.Urls.GetWeatherByZipCode, { zipCode: zipCode }, function (data) {
-            ko.mapping.fromJS(data, {}, self.FilteredWeather);
-            self.Weather.push(self.FilteredWeather);
+        self.FilteredWeather.removeAll();
+        return $.get(self.Config.Urls.GetWeatherByZipCode, { zipCode: zipCode }, function (data) {
+            var tempObsArray = ko.observableArray([]);
+            ko.mapping.fromJS(data, {}, tempObsArray);
+            self.Weather.push(tempObsArray);
             if (callback !== undefined && typeof (callback) == "function") {
                 callback();
             }
@@ -63,7 +65,7 @@
             if (filteredData.length > 0) {
                 ko.mapping.fromJS(filteredData, {}, self.FilteredWeather);
             } else {
-                self.FetchWeatherByZipCode(self.SelectedCity());
+                self.FetchWeatherByZipCode(self.SelectedCity(), function () { self.LoadWeather(cityModel) });
             }
         } 
     };
@@ -87,7 +89,6 @@
             type: 'POST',
             url: self.Config.Urls.AddCity,
             data: jsonCity,
-            //dataType: 'json',
             contentType: 'application/json',
             success: function (returnedData) {
                 if (returnedData != null && returnedData.length() > 0) {
@@ -100,13 +101,6 @@
                 }
             }
         });
-
-        //$.post(self.Config.Urls.AddCity, { city: jsonCity }, function (returnedData) {
-        //    if (returnedData !== undefined || returnedData.length() > 0) {
-        //        self.AddCityError(returnedData);
-        //        self.ShowAddCityError(true);
-        //    }
-        //});
     };
 
     self.CancelAddNewCity = function () {

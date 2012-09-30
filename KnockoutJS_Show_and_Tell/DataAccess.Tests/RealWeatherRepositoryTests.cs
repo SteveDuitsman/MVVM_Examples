@@ -8,10 +8,10 @@ namespace DataAccess.Tests
     {
         protected IWeatherRepository weatherRepo = new RealWeatherRepository(); 
         [TestMethod]
-        [Ignore]    //  This is ignored so we dont blow by our API Limit
+        //[Ignore]    //  This is ignored so we dont blow by our API Limit
         public void Test_WUnderground_API_Call()
         {
-            var zipCode = 61088;
+            var zipCode = 54601;
 
             var result = weatherRepo.GetWeatherData(zipCode);
 
