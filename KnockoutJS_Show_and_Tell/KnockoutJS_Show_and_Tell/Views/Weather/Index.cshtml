@@ -9,7 +9,7 @@
             <h2>Cities</h2>
             <br />
             <div id="cityList" data-bind="foreach: Cities">
-                <div class="CityListItem" data-bind="css: { 'selected-City': $parent.IsCitySelected(ZipCode) }">
+                <div class="CityListItem" data-bind="css: { 'selected-City': $parent.SelectedCity().toString() == ZipCode().toString() }">                    
                     <a class="cityLink" href="#" data-bind="click: $parent.LoadWeather.bind(ZipCode)">
                         <span data-bind="text: Name"></span>&nbsp;(<span data-bind="text: ZipCode"></span>)
                     </a>

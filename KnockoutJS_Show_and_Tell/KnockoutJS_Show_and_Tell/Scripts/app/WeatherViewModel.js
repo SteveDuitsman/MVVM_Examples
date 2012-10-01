@@ -4,7 +4,7 @@
     self.Config = config;
 
     self.Cities = ko.observableArray([]);
-    self.SelectedCity = ko.observable();
+    self.SelectedCity = ko.observable(-1);
     self.FilteredWeather = ko.observableArray([]);
     self.Weather = ko.observableArray([]);
 

@@ -60,30 +60,45 @@
 .CityListItem
 {
     padding: 5px;
-    background-color: navy;
-    color: whitesmoke;
+    /*background-color: navy;*/
+    color: black;
     font-weight: bold;
+    /*border-top: 1px solid black;
+    border-bottom: 1px solid black;*/
 }
 
 a.cityLink
 {
-    color: whitesmoke;
+    color: black;
     outline: none;
     padding-left: 3px;
     padding-right: 3px;
     text-decoration: underline;
 }
 
-    a.cityLink:link, a.cityLink:visited,
+    /*a.cityLink:link, a.cityLink:visited,
     a.cityLink:active, a.cityLink:hover
     {
-        color: lightgoldenrodyellow;
-    }
+        color: blue;
+        background-color: transparent;
+    }*/
 
-.cityLink:hover
+/*.cityLink:hover
 {
     background-color: navy;
+}*/
+
+.selected-City
+{
+    color: black;
+    /*background-color: rgb(239, 238, 239);*/
+    background-color: steelblue;
 }
+
+    .selected-City a
+    {
+        color: black;
+    }
 
 .WeatherList
 {
@@ -95,7 +110,7 @@ a.cityLink
 
 .weatherObservations
 {
-    border: solid gray 1px;
+    /*border: solid gray 1px;*/
     padding: 5px;
     margin: 0px 5px 10px 5px;
     /*background-color: lightgray;*/
@@ -123,7 +138,7 @@ table.CurrentObservation
     width: 100%;
     font-style: italic;
     font-size: large;
-    border-bottom: 2px solid blue;
+    border-bottom: 2px solid steelblue;
 }
 
 .CityDetails
