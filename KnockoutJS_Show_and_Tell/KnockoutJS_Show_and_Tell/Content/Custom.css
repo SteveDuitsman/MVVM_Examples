@@ -5,7 +5,12 @@
     background-color: lightgray;
 }
 
-.knockoutModelDebug
+.knockoutDebugSection
+{
+    float: left;
+}
+
+.knockoutDebugText
 {
     font-size: 1em;
     font-family: Consolas;
@@ -49,6 +54,7 @@
 {
     float: left;
     width: 25%;
+    min-height: 400px;
 }
 
 .CityListItem
@@ -84,6 +90,7 @@ a.cityLink
     float: right;
     width: 70%;
     padding: 5px;
+    min-height: 400px;
 }
 
 .weatherObservations
