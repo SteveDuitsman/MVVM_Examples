@@ -25,7 +25,8 @@ namespace KnockoutJS_Show_and_Tell
 
             bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
                         "~/Scripts/lib/knockout-*",
-                        "~/Scripts/lib/knockout.mapping*"));
+                        "~/Scripts/lib/knockout.mapping*",
+                        "~/Scripts/ko.bindings/ko.bindingHandlers.*"));
 
             bundles.Add(new ScriptBundle("~/bundles/weather").Include(
                         "~/Scripts/app/CityModel.js",

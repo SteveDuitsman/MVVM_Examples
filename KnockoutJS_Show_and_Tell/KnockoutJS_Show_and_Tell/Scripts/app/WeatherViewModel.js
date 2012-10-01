@@ -111,6 +111,7 @@
         self.AddCityError("");
         self.ShowAddCityError(false);
         self.NewCityModel = new CityModel();
+        self.ShowAddForm(false);
     };
 
 };

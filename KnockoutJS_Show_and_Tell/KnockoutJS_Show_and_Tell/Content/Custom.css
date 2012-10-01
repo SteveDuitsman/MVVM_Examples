@@ -134,3 +134,13 @@ table.CurrentObservation
 {
     width: 3in;
 }
+
+.addCityForm
+{
+    background-color: lightsteelblue;
+    padding: 5px;
+}
+    .addCityForm p
+    {
+        font-weight: bold;
+    }

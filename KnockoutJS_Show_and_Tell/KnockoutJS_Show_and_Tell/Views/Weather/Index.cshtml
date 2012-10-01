@@ -15,8 +15,17 @@
                     </a>
                 </div>
             </div>
-            <button data-bind="click: ShowAddCityForm" >Add</button>
-            <div data-bind="visible: ShowAddForm, template: { name: 'add-city-tmpl', data: NewCityModel }"></div>
+            <button data-bind="visible: ShowAddForm() == false, click: ShowAddCityForm">Add</button>
+            <div data-bind="slideVisible: ShowAddForm, with: NewCityModel">
+                <div class="addCityForm">
+                    <p>Name: </p>
+                    <input data-bind="value: Name" />
+                    <p>ZipCode: </p>
+                    <input data-bind="value: ZipCode" />
+                    <button data-bind="click: $parent.SaveNewCity">Save</button>
+                    <button data-bind="click: $parent.CancelAddNewCity">Cancel</button>
+                </div>
+            </div>
         </div>
         <div class="WeatherList">
             <h2>Forecast</h2>
@@ -77,38 +86,31 @@
 
 @section scripts{
     @Scripts.Render("~/bundles/weather");
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#loading-overlay').fadeIn();
+
+            var config = {
+                Urls: {
+                    GetCities: '@Url.Action("GetCities", "Weather")',
+                    AddCity: '@Url.Action("AddCity", "Weather")',
+                    GetWeather: '@Url.Action("GetWeather", "Weather")',
+                    GetWeatherByZipCode: '@Url.Action("GetWeatherByZipCode", "Weather")'
+                }
+            };
+
+            var weatherViewModel = new WeatherViewModel(config);
+
+            $.when(weatherViewModel.FetchCities(), weatherViewModel.FetchWeather())
+             .done(function () {
+                 ko.applyBindings(weatherViewModel);
+             })
+             .done(function () {
+                 $('#loading-overlay').fadeOut();
+             });
+        });
+    </script>
 }
 
-<script type="text/html" id="add-city-tmpl">
-    <p>Name: </p>
-    <input data-bind="value: Name" />
-    <p>ZipCode: </p>
-    <input data-bind="value: ZipCode" />
-    <button data-bind="click: $parent.SaveNewCity">Save</button>
-    <button data-bind="click: $parent.CancelAddNewCity">Cancel</button>
-</script>
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#loading-overlay').fadeIn();
-
-        var config = {
-            Urls: {
-                GetCities: '@Url.Action("GetCities", "Weather")',
-                AddCity: '@Url.Action("AddCity", "Weather")',
-                GetWeather: '@Url.Action("GetWeather", "Weather")',
-                GetWeatherByZipCode: '@Url.Action("GetWeatherByZipCode", "Weather")'
-            }
-        };
-
-        var weatherViewModel = new WeatherViewModel(config);
-
-        $.when(weatherViewModel.FetchCities(), weatherViewModel.FetchWeather())
-         .done(function () {
-             ko.applyBindings(weatherViewModel);
-         })
-         .done(function () {
-             $('#loading-overlay').fadeOut();
-         });
-    });
-</script>

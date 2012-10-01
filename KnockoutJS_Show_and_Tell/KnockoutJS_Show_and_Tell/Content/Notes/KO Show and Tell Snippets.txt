@@ -175,20 +175,36 @@
 //============================================================================================================================
 
 ko.bindingHandlers.slideVisible = {
+	init: function(element, valueAccessor) {
+        var value = ko.utils.unwrapObservable(valueAccessor());
+        $(element).toggle(value);
+    },
     update: function(element, valueAccessor, allBindingsAccessor) {
-        // First get the latest data that we're bound to
         var value = valueAccessor(), allBindings = allBindingsAccessor();
-         
-        // Next, whether or not the supplied model property is observable, get its current value
         var valueUnwrapped = ko.utils.unwrapObservable(value); 
-         
-        // Grab some more data from another binding property
         var duration = allBindings.slideDuration || 400; // 400ms is default duration unless otherwise specified
-         
-        // Now manipulate the DOM element
+
         if (valueUnwrapped == true) 
-            $(element).slideDown(duration); // Make the element visible
+            $(element).slideDown(duration);
         else
-            $(element).slideUp(duration);   // Make the element invisible
+            $(element).slideUp(duration);
     }
 };
+
+
+//============================================================================================================================
+//	AddCityform Template Code
+//============================================================================================================================
+
+<div data-bind="slideVisible: ShowAddForm, template: { name: 'add-city-tmpl', data: NewCityModel }">
+
+<script type="text/html" id="add-city-tmpl">
+    <div class="addCityForm">
+        <p>Name: </p>
+        <input data-bind="value: Name" />
+        <p>ZipCode: </p>
+        <input data-bind="value: ZipCode" />
+        <button data-bind="click: $parent.SaveNewCity">Save</button>
+        <button data-bind="click: $parent.CancelAddNewCity">Cancel</button>
+    </div>
+</script>
