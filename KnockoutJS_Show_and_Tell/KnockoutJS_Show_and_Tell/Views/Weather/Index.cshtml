@@ -15,7 +15,7 @@
                     </a>
                 </div>
             </div>
-            <button data-bind="visible: ShowAddForm() == false, click: ShowAddCityForm">Add</button>
+            <button data-bind="visible: !ShowAddForm(), click: ShowAddCityForm">Add</button>
             <div data-bind="slideVisible: ShowAddForm, with: NewCityModel">
                 <div class="addCityForm">
                     <p>Name: </p>

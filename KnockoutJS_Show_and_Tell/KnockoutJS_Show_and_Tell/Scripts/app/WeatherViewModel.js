@@ -76,8 +76,6 @@
 
     self.ShowAddForm = ko.observable(false);
     self.NewCityModel = new CityModel();
-    self.ShowAddCityError = ko.observable(false);
-    self.AddCityError = ko.observable();
 
     self.ShowAddCityForm = function () {
         self.NewCityModel = new CityModel();
@@ -85,8 +83,6 @@
     };
  
     self.SaveNewCity = function () {
-        self.AddCityError("");
-        self.ShowAddCityError(false);
         var jsonCity = ko.toJSON(self.NewCityModel);
 
         $.ajax({
@@ -96,8 +92,7 @@
             contentType: 'application/json',
             success: function (returnedData) {
                 if (returnedData != null && returnedData.length() > 0) {
-                    self.AddCityError(returnedData);
-                    self.ShowAddCityError(true);
+                    alert(returnedData);
                 } else {
                     self.NewCityModel = new CityModel();
                     self.ShowAddForm(false);
@@ -108,8 +103,6 @@
     };
 
     self.CancelAddNewCity = function () {
-        self.AddCityError("");
-        self.ShowAddCityError(false);
         self.NewCityModel = new CityModel();
         self.ShowAddForm(false);
     };
