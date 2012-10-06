@@ -66,7 +66,6 @@
             <dt>
                 <span>Height (Cm):</span>
                 <input data-bind="value: HeightCm" />
-
             </dt>
         </dl>
     </div>

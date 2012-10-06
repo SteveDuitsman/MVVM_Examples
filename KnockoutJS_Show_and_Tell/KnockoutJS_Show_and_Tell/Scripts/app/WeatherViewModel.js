@@ -9,7 +9,7 @@
     self.Weather = ko.observableArray([]);
 
     self.FetchCities = function (callback) {
-        return $.get(self.Config.Urls.GetCities, function (data) {
+        return $.getJSON(self.Config.Urls.GetCities, function (data) {
             ko.mapping.fromJS(data, {}, self.Cities);
             if (callback !== undefined && typeof (callback) == "function") {
                 callback();
@@ -36,10 +36,6 @@
                 callback();
             }
         });
-    };
-
-    self.IsCitySelected = function(zip) {
-        return self.SelectedCity() === zip;
     };
 
     self.LoadWeather = function (cityModel) {
@@ -71,9 +67,6 @@
         } 
     };
 
-    var matchWeatherItemByZipCode = function (zipCode) {
-    };
-
     self.ShowAddForm = ko.observable(false);
     self.NewCityModel = new CityModel();
 
@@ -94,9 +87,10 @@
                 if (returnedData != null && returnedData.length() > 0) {
                     alert(returnedData);
                 } else {
-                    self.NewCityModel = new CityModel();
+                    //self.NewCityModel = new CityModel();
                     self.ShowAddForm(false);
-                    self.FetchCities();
+                    self.Cities.push(self.NewCityModel);
+                    //self.FetchCities();
                 }
             }
         });

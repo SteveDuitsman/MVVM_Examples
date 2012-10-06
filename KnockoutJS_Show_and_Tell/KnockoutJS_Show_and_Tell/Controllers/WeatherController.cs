@@ -18,9 +18,6 @@ namespace KnockoutJS_Show_and_Tell.Controllers
             CityService = cityService;
         }
 
-        //
-        // GET: /Weather/
-
         public ActionResult Index()
         {
             return View();
