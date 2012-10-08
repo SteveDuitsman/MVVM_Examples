@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+        <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Visible JS</Title>
+            <Author>Steve Duitsman</Author>
+            <Description>Visible validation JS</Description>
+            <Shortcut>kovj</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="JavaScript">
+            <![CDATA[
+        self.IsHeightInvalid = ko.computed(function () {
+            return (self.HeightIn() >= 125);
+        });
+            ]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

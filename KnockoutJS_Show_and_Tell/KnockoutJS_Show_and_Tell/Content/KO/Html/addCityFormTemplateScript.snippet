@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+        <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Add City Form Template Script</Title>
+            <Author>Steve Duitsman</Author>
+            <Description>Add City Form Template Script</Description>
+            <Shortcut>koacts</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="HTML">
+            <![CDATA[
+<script type="text/html" id="add-city-tmpl">
+    <div class="addCityForm">
+        <p>Name: </p>
+        <input data-bind="value: Name" />
+        <p>ZipCode: </p>
+        <input data-bind="value: ZipCode" />
+        <button data-bind="click: $$parent.SaveNewCity">Save</button>
+        <button data-bind="click: $$parent.CancelAddNewCity">Cancel</button>
+    </div>
+</script>
+            ]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

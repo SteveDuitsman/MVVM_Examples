@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+        <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>KO Writeable Observable JS</Title>
+            <Author>Steve Duitsman</Author>
+            <Description>Writeable Observable JS</Description>
+            <Shortcut>kowcj</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="JavaScript">
+            <![CDATA[
+        self.HeightCm = ko.computed({
+            read: function () {
+                return self.HeightIn() * 2.54;
+            },
+            write: function (newValue) {
+                var newHeightInInches = newValue / 2.54;
+                self.HeightIn(newHeightInInches);
+            }
+        });
+            ]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

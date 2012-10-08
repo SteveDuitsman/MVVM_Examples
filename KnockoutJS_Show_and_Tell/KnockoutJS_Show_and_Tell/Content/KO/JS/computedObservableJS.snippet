@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+        <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>KO Computed Observable JS</Title>
+            <Author>Steve Duitsman</Author>
+            <Description>Computed Observable JS</Description>
+            <Shortcut>kocoj</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="JavaScript">
+            <![CDATA[
+    function PersonViewModel() {
+        var self = this;
+        self.Name = ko.observable('Fred');
+        self.HeightIn = ko.observable(70);
+        self.HeightCm = ko.computed(function () {
+            return self.HeightIn() * 2.54;
+        });
+    };
+
+    $$(document).ready(function () {
+        var nameModel = new PersonViewModel();
+        ko.applyBindings(nameModel);
+    });
+            ]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
