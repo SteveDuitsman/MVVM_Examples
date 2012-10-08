@@ -87,10 +87,9 @@
                 if (returnedData != null && returnedData.length() > 0) {
                     alert(returnedData);
                 } else {
-                    //self.NewCityModel = new CityModel();
+                    self.NewCityModel = new CityModel();
                     self.ShowAddForm(false);
-                    self.Cities.push(self.NewCityModel);
-                    //self.FetchCities();
+                    self.FetchCities();
                 }
             }
         });
