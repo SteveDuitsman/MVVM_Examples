@@ -166,3 +166,8 @@ table.CurrentObservation
     {
         font-weight: bold;
     }
+
+    .addCityForm input
+    {
+        width:95%;
+    }

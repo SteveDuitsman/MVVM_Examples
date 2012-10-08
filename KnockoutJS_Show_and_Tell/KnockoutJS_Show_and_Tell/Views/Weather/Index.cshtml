@@ -87,65 +87,6 @@
 @section scripts{
     @Scripts.Render("~/bundles/weather");
 
-    <script type="text/html" id="add-city-tmpl">
-        <div class="addCityForm">
-            <p>Name: </p>
-            <input data-bind="value: Name" />
-            <p>ZipCode: </p>
-            <input data-bind="value: ZipCode" />
-            <button data-bind="click: $parent.SaveNewCity">Save</button>
-            <button data-bind="click: $parent.CancelAddNewCity">Cancel</button>
-        </div>
-    </script>
-
-    <script type="text/html" id="weatherObservation-Template">
-        <!-- ko if: current_observation -->
-        <div class="CurrentObservation" data-bind="with: current_observation">
-            <div>
-                <div class="CurrentObservationCity" data-bind="if: display_location">
-                    <strong><span data-bind="text: display_location.full"></span></strong>
-                </div>
-                <!-- ko if: observation_location -->
-                <div class="CityDetails" data-bind="with: observation_location" style="float: right;">
-                    Lat:&nbsp;<span data-bind="text: latitude"></span> | 
-                Lon:&nbsp;<span data-bind="text: longitude"></span> | 
-                Elev:&nbsp;<span data-bind="text: elevation"></span> | 
-                <span data-bind="text: $parent.observation_time"></span>
-                </div>
-                <!-- /ko -->
-            </div>
-            <div>
-                <table class="CurrentObservation">
-                    <thead>
-                        <tr>
-                            <th>Now</th>
-                            <th></th>
-                            <th>Temperature</th>
-                            <th>Feels Like</th>
-                            <th>Wind</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <img class="currentConditions" src="" data-bind="attr: { src: icon_url }" />
-                            </td>
-                            <td>
-                                <span class="currentConditions" data-bind="text: weather"></span>
-                            </td>
-                            <td><span class="CurrentTemp" data-bind="text: temperature_string"></span></td>
-                            <td><span data-bind="text: feelslike_string"></span></td>
-                            <td><span data-bind="text: wind_string"></span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <br />
-        <br />
-        <!-- /ko -->
-    </script>
-
     <script type="text/javascript">
         $(document).ready(function () {
             $('#loading-overlay').fadeIn();
