@@ -54,9 +54,26 @@ slideVisible
 	Demo, with duration
 
 Weather	---------------------------------------------------------------------------------
-
+	Demo
+	ViewModel	
 	observableArray
 	Fetch
 		ko.mapping.fromJS
 			Models vs Mapping Aside
 	ko.utils.arrayFilter
+
+	Control Flow Bindings
+		ForEach
+		If
+		With
+
+		Binding Context Aside
+
+	Templating
+		City Form
+		Weather List
+
+	Add City
+
+		toJSON
+		Posting
