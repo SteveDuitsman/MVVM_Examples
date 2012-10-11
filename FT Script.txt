@@ -1,0 +1,62 @@
+Welcome
+About me
+	centare for about a year and a quarter
+
+KnockoutJS
+
+Features
+	Declarative bindings
+		in markup
+		similar concept as XAML
+
+	Dependency Tracking
+
+	Automatic UI Refresh
+
+	Templating
+
+MVVM
+	Joke, MVVM in one slide
+
+	Model
+		applicaiton data
+	ViewModel
+		pure code representation of data and operations for a UI
+	View
+		visible interactive UI representing the stat of the view model (HTML)
+
+DEMO	---------------------------------------------------------------------------------
+
+jQuery
+KO Basics
+	markup
+	observable
+	subscriptions
+	applyBindings
+
+Height
+Computed
+	Dependency Tracking Aside
+	Declarative bindings -> Computed Observable
+
+Validation
+	visible Attribute
+	another computed
+	Show this...laugh
+
+slideVisible
+	bindingHandlers
+		Element
+		ValueAccessor
+		AllBindings
+		ViewModel
+		BindingContext
+	Demo, with duration
+
+Weather	---------------------------------------------------------------------------------
+
+	observableArray
+	Fetch
+		ko.mapping.fromJS
+			Models vs Mapping Aside
+	ko.utils.arrayFilter

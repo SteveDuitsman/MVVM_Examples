@@ -89,8 +89,6 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#loading-overlay').fadeIn();
-
             var config = {
                 Urls: {
                     GetCities: '@Url.Action("GetCities", "Weather")',
@@ -105,9 +103,6 @@
             $.when(weatherViewModel.FetchCities(), weatherViewModel.FetchWeather())
              .done(function () {
                  ko.applyBindings(weatherViewModel);
-             })
-             .done(function () {
-                 $('#loading-overlay').fadeOut();
              });
         });
     </script>
