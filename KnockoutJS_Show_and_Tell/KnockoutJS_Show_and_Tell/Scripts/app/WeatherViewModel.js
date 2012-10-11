@@ -57,7 +57,7 @@
                 return match;
             });
             if (filteredData.length > 0) {
-                ko.mapping.fromJS(filteredData, {}, self.FilteredWeather);
+                self.FilteredWeather(filteredData);
             } else {
                 if (self.SelectedCity() !== cityModel.ZipCode()) {
                     self.FetchWeatherByZipCode(cityModel.ZipCode(), function () { self.LoadWeather(cityModel) });
